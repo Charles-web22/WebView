@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG ="MainActivity" ;
     WebView webView ;
-    TextView interntTv;
+    TextView interntTV;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         webView = (WebView) findViewById(R.id.webView);
-        interntTv = (TextView)findViewById(R.id.nointernet_textview);
+        interntTV = (TextView)findViewById(R.id.nointernet_textview);
 
         String url = "https://www.youm7.com/";
         webView.loadUrl(url);
@@ -108,45 +108,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return false;
     }
-
-/*
-    String getPage(String url) throws IOException {
-        Request request = new Request.Builder()
-                .url(url)
-                .build();
-
-        Response response = client.newCall(request).execute();
-        return response.body().string();
-    }*/
-
-/*
-
-    public  interface NewsService{
-        @GET("")
-            //Call<ResponseBody> getNews(@Query("apiKey") String apikey ,@Query("country") String country ,@Query("category") String category );
-        Call<ResponseBody> getNews();
-    }
-    private void startRequest() {
-        String newsApiLink = "https://www.youm7.com";
-
-        Retrofit retrofit = new Retrofit.Builder().baseUrl(newsApiLink).build();
-        NewsService newsService = retrofit.create(NewsService.class);
-
-        newsService.getNews().enqueue(new retrofit2.Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, retrofit2.Response<ResponseBody> response) {
-
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-
-            }
-        });
-
-
-    }
-*/
-
 
 }
